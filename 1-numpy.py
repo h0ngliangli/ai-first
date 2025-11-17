@@ -9,7 +9,9 @@ a, b, c, d = np.random.randn(4)
 learning_rate = 1e-6
 for t in range(3000):
     y_pred = a + b * x + c * x**2 + d * x**3
-    loss = np.square(y_pred - y).sum()
+    # Sum of Squared Errors (SSE) 平方误差和.
+    # 和方差(Variance)不同，方差是均方误差(MSE)的无偏估计
+    loss = np.square(y_pred - y).sum() # Sum of squared errors (SSE) 平方误差和
     # if t % 100 == 99:   
     #     print(t, loss, a, b, c, d)
     grad_y_pred = 2.0 * (y_pred - y)
